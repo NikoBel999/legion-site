@@ -1,0 +1,138 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+header {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+#menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+.hero {
+  background-image: url('hero-background.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 0;
+}
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+.cta-button {
+  display: inline-block;
+  background-color: #ff9900;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin-top: 1rem;
+}
+input, textarea {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+button {
+  padding: 0.75rem;
+  background-color: #1a1a1a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.gallery {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.gallery img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+}
+blockquote {
+  border-left: 4px solid #ccc;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+}
+details {
+  margin-bottom: 1rem;
+}
+.call-button-mobile {
+  display: none;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #28a745;
+  color: white;
+  padding: 0.75rem 1.2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  text-decoration: none;
+}
+@media (max-width: 768px) {
+  .call-button-mobile {
+    display: block;
+  }
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+footer {
+  background-color: #f0f0f0;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}

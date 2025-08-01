@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ООО "Легион" — Ремонт жилых и коммерческих помещений</title>
+  <meta name="description" content="Ремонт квартир и офисов в Москве. ООО 'Легион' — качественный ремонт под ключ." />
+  <meta name="keywords" content="ремонт, отделка, квартиры, офисы, Москва, легион" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+</head>
+<body>
+
+<header>
+  <h1>ООО "Легион"</h1>
+  <p>Ремонт жилых и коммерческих помещений</p>
+  <button id="menu-toggle">☰</button>
+  <nav id="nav-links" class="hidden">
+    <a href="#services">Услуги</a>
+    <a href="#about">О компании</a>
+    <a href="#portfolio">Портфолио</a>
+    <a href="#testimonials">Отзывы</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Контакты</a>
+  </nav>
+</header>
+
+<section class="hero fade-in">
+  <h1>Качественный ремонт под ключ</h1>
+  <p>Мы профессионально занимаемся ремонтом квартир, офисов и других помещений. Работаем с 2023 года и активно развиваемся!</p>
+  <a href="#contact" class="cta-button">Оставить заявку</a>
+</section>
+
+<section class="services fade-in" id="services">
+  <h2>Наши услуги</h2>
+  <div class="services-list">
+    <div><strong>Косметический ремонт</strong><br>Окраска стен, замена покрытий и мелкие работы.</div>
+    <div><strong>Капитальный ремонт</strong><br>Комплексное обновление помещений.</div>
+    <div><strong>Отделочные работы</strong><br>Штукатурка, покраска, укладка плитки и др.</div>
+    <div><strong>Ремонт офисов</strong><br>Быстрое и профессиональное обустройство рабочих пространств.</div>
+  </div>
+</section>
+
+<section class="about fade-in" id="about">
+  <h2>О компании</h2>
+  <p>ООО "Легион" зарегистрирована 01.11.2023. С момента основания компания успешно выполняет ремонтные проекты различной сложности. Мы нацелены на качество и удовлетворение клиента. Работаем с организациями (ООО, ИП) и частными лицами.</p>
+</section>
+
+<section class="portfolio fade-in" id="portfolio">
+  <h2>Наши работы</h2>
+  <div class="gallery">
+    <img src="work1.jpg" alt="Ремонт кухни" />
+    <img src="work2.jpg" alt="Ремонт ванной" />
+    <img src="work3.jpg" alt="Офисный ремонт" />
+  </div>
+</section>
+
+<section class="testimonials fade-in" id="testimonials">
+  <h2>Отзывы клиентов</h2>
+  <blockquote>“Сделали ремонт быстро и качественно. Спасибо команде Легион!” — Анна, Москва</blockquote>
+  <blockquote>“Очень довольны результатом. Рекомендуем!” — Игорь, Зеленоград</blockquote>
+</section>
+
+<section class="faq fade-in" id="faq">
+  <h2>Часто задаваемые вопросы</h2>
+  <details><summary>Сколько длится ремонт?</summary><p>Обычно от 2 до 6 недель в зависимости от объёма.</p></details>
+  <details><summary>Какие гарантии?</summary><p>Гарантия на все виды работ составляет 12 месяцев.</p></details>
+</section>
+
+<section class="contact fade-in" id="contact">
+  <h2>Связаться с нами</h2>
+  <p>Телефон: +7 (999) 000-00-00</p>
+  <p>Email: info@legion-remont.ru</p>
+  <p>Адрес: г. Москва, ул. Примерная, 1</p>
+
+  <form>
+    <input type="text" name="Имя" placeholder="Ваше имя" required />
+    <input type="email" name="Email" placeholder="Ваш Email" required />
+    <textarea name="Сообщение" placeholder="Ваше сообщение" rows="4" required></textarea>
+    <button type="submit">Отправить</button>
+  </form>
+
+  <div id="map" style="width: 100%; height: 400px; margin-top: 2rem;"></div>
+</section>
+
+<a href="tel:+79990000000" class="call-button-mobile">📞 Позвонить</a>
+
+<footer>
+  &copy; 2025 ООО "Легион". Все права защищены.
+</footer>
+
+<script>
+document.getElementById("menu-toggle").onclick = () => {
+  document.getElementById("nav-links").classList.toggle("hidden");
+};
+
+// Анимация появления
+const faders = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+});
+faders.forEach(el => observer.observe(el));
+
+// Яндекс.Карта
+ymaps.ready(function () {
+  var myMap = new ymaps.Map("map", {
+    center: [55.76, 37.64],
+    zoom: 10
+  });
+  myMap.geoObjects.add(new ymaps.Placemark([55.76, 37.64], {
+    balloonContent: 'ООО "Легион"'
+  }));
+});
+</script>
+
+</body>
+</html>

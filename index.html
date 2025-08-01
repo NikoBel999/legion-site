@@ -3,120 +3,123 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ООО "Легион" — Ремонт жилых и коммерческих помещений</title>
-  <meta name="description" content="Ремонт квартир и офисов в Москве. ООО 'Легион' — качественный ремонт под ключ." />
-  <meta name="keywords" content="ремонт, отделка, квартиры, офисы, Москва, легион" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <title>ООО "Легион"</title>
+  <link rel="icon" type="image/webp" href="assets/helmet-icon.webp">
   <link rel="stylesheet" href="style.css" />
-  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Black Ops One', sans-serif;
+      background: url('assets/office1.webp') center center / cover no-repeat fixed;
+      color: #f5f5f5;
+      scroll-behavior: smooth;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.8);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+      padding: 10px 0;
+      text-align: center;
+    }
+    .company-name {
+      font-size: 2rem;
+      color: gold;
+      margin-bottom: 10px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    nav button {
+      font-size: 1.25rem;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      background: gold;
+      color: black;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    nav button:hover {
+      background: #e6c200;
+    }
+    main {
+      padding: 150px 20px 60px;
+      text-align: center;
+    }
+    section {
+      display: none;
+      padding: 40px 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      margin-bottom: 30px;
+    }
+    section.active {
+      display: block;
+    }
+    .map {
+      width: 100%;
+      height: 400px;
+      border: none;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="company-name">ООО "Легион"</div>
+    <nav>
+      <button onclick="showSection('home')">Главная</button>
+      <button onclick="showSection('about')">О компании</button>
+      <button onclick="showSection('services')">Услуги</button>
+      <button onclick="showSection('portfolio')">Портфолио</button>
+      <button onclick="showSection('contacts')">Контакты</button>
+    </nav>
+  </header>
 
-<header>
-  <h1>ООО "Легион"</h1>
-  <p>Ремонт жилых и коммерческих помещений</p>
-  <button id="menu-toggle">☰</button>
-  <nav id="nav-links" class="hidden">
-    <a href="#services">Услуги</a>
-    <a href="#about">О компании</a>
-    <a href="#portfolio">Портфолио</a>
-    <a href="#testimonials">Отзывы</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">Контакты</a>
-  </nav>
-</header>
+  <main>
+    <section id="home" class="active">
+      <h1>Добро пожаловать!</h1>
+      <p>Качественный ремонт помещений под ключ от профессионалов.</p>
+    </section>
 
-<section class="hero fade-in">
-  <h1>Качественный ремонт под ключ</h1>
-  <p>Мы профессионально занимаемся ремонтом квартир, офисов и других помещений. Работаем с 2023 года и активно развиваемся!</p>
-  <a href="#contact" class="cta-button">Оставить заявку</a>
-</section>
+    <section id="about">
+      <h2>О компании</h2>
+      <p>ООО "Легион" — команда экспертов по ремонту и отделке помещений с более чем 10-летним опытом.</p>
+    </section>
 
-<section class="services fade-in" id="services">
-  <h2>Наши услуги</h2>
-  <div class="services-list">
-    <div><strong>Косметический ремонт</strong><br>Окраска стен, замена покрытий и мелкие работы.</div>
-    <div><strong>Капитальный ремонт</strong><br>Комплексное обновление помещений.</div>
-    <div><strong>Отделочные работы</strong><br>Штукатурка, покраска, укладка плитки и др.</div>
-    <div><strong>Ремонт офисов</strong><br>Быстрое и профессиональное обустройство рабочих пространств.</div>
-  </div>
-</section>
+    <section id="services">
+      <h2>Услуги</h2>
+      <ul>
+        <li>Капитальный ремонт офисов</li>
+        <li>Отделочные работы</li>
+        <li>Дизайн интерьера</li>
+      </ul>
+    </section>
 
-<section class="about fade-in" id="about">
-  <h2>О компании</h2>
-  <p>ООО "Легион" зарегистрирована 01.11.2023. С момента основания компания успешно выполняет ремонтные проекты различной сложности. Мы нацелены на качество и удовлетворение клиента. Работаем с организациями (ООО, ИП) и частными лицами.</p>
-</section>
+    <section id="portfolio">
+      <h2>Портфолио</h2>
+      <p>Примеры выполненных проектов (будут добавлены изображения).</p>
+    </section>
 
-<section class="portfolio fade-in" id="portfolio">
-  <h2>Наши работы</h2>
-  <div class="gallery">
-    <img src="work1.jpg" alt="Ремонт кухни" />
-    <img src="work2.jpg" alt="Ремонт ванной" />
-    <img src="work3.jpg" alt="Офисный ремонт" />
-  </div>
-</section>
+    <section id="contacts">
+      <h2>Контакты</h2>
+      <p>г. Екатеринбург, ул. Примерная, д. 123</p>
+      <p>Тел.: +7 (999) 123-45-67</p>
+      <iframe class="map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A05831abf4c3e9185d279ec73cb0ef203b0c94e7b058fbbe8b1644f49e6e49600&amp;source=constructor" frameborder="0"></iframe>
+    </section>
+  </main>
 
-<section class="testimonials fade-in" id="testimonials">
-  <h2>Отзывы клиентов</h2>
-  <blockquote>“Сделали ремонт быстро и качественно. Спасибо команде Легион!” — Анна, Москва</blockquote>
-  <blockquote>“Очень довольны результатом. Рекомендуем!” — Игорь, Зеленоград</blockquote>
-</section>
-
-<section class="faq fade-in" id="faq">
-  <h2>Часто задаваемые вопросы</h2>
-  <details><summary>Сколько длится ремонт?</summary><p>Обычно от 2 до 6 недель в зависимости от объёма.</p></details>
-  <details><summary>Какие гарантии?</summary><p>Гарантия на все виды работ составляет 12 месяцев.</p></details>
-</section>
-
-<section class="contact fade-in" id="contact">
-  <h2>Связаться с нами</h2>
-  <p>Телефон: +7 (999) 000-00-00</p>
-  <p>Email: info@legion-remont.ru</p>
-  <p>Адрес: г. Москва, ул. Примерная, 1</p>
-
-  <form>
-    <input type="text" name="Имя" placeholder="Ваше имя" required />
-    <input type="email" name="Email" placeholder="Ваш Email" required />
-    <textarea name="Сообщение" placeholder="Ваше сообщение" rows="4" required></textarea>
-    <button type="submit">Отправить</button>
-  </form>
-
-  <div id="map" style="width: 100%; height: 400px; margin-top: 2rem;"></div>
-</section>
-
-<a href="tel:+79990000000" class="call-button-mobile">📞 Позвонить</a>
-
-<footer>
-  &copy; 2025 ООО "Легион". Все права защищены.
-</footer>
-
-<script>
-document.getElementById("menu-toggle").onclick = () => {
-  document.getElementById("nav-links").classList.toggle("hidden");
-};
-
-// Анимация появления
-const faders = document.querySelectorAll('.fade-in');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
     }
-  });
-});
-faders.forEach(el => observer.observe(el));
-
-// Яндекс.Карта
-ymaps.ready(function () {
-  var myMap = new ymaps.Map("map", {
-    center: [55.76, 37.64],
-    zoom: 10
-  });
-  myMap.geoObjects.add(new ymaps.Placemark([55.76, 37.64], {
-    balloonContent: 'ООО "Легион"'
-  }));
-});
-</script>
-
+  </script>
 </body>
 </html>
